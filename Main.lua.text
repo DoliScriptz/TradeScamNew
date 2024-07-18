@@ -1,0 +1,57 @@
+-- creating the main GUI
+local screenGui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local startTradeCheckbox = Instance.new("TextButton")
+local creditsLabel = Instance.new("TextLabel")
+
+-- setting properties for the screenGui
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- setting properties for the frame
+frame.Parent = screenGui
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+frame.Size = UDim2.new(0, 200, 0, 90)
+frame.Position = UDim2.new(0.5, -100, 0.5, -45)
+
+-- setting properties for the title
+title.Parent = frame
+title.Text = "Trade Scam GUI"
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.SourceSans
+title.TextSize = 20
+
+-- setting properties for the startTradeCheckbox
+startTradeCheckbox.Parent = frame
+startTradeCheckbox.Text = "Start Trade Scam [ ]"
+startTradeCheckbox.Size = UDim2.new(1, 0, 0, 30)
+startTradeCheckbox.Position = UDim2.new(0, 0, 0, 30)
+startTradeCheckbox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+startTradeCheckbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+startTradeCheckbox.Font = Enum.Font.SourceSans
+startTradeCheckbox.TextSize = 20
+startTradeCheckbox.AutoButtonColor = false
+
+-- setting properties for the creditsLabel
+creditsLabel.Parent = frame
+creditsLabel.Text = "Credits To FuseScripts!"
+creditsLabel.Size = UDim2.new(1, 0, 0, 30)
+creditsLabel.Position = UDim2.new(0, 0, 0, 60)
+creditsLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+creditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditsLabel.Font = Enum.Font.SourceSans
+creditsLabel.TextSize = 20
+
+-- adding functionality to the startTradeCheckbox
+local function onCheckboxClicked()
+if startTradeCheckbox.Text == "Start Trade Scam [ ]" then
+startTradeCheckbox.Text = "Start Trade Scam [X]"
+else
+startTradeCheckbox.Text = "Start Trade Scam [ ]"
+end
+end
+
+
+startTradeCheckbox.MouseButton1Click:Connect(onCheckboxClicked)
